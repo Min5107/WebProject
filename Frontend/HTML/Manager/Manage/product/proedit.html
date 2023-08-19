@@ -22,48 +22,22 @@
   <body>
     <div id="manage_wrapper">
       <main>
-        <div class="manage_menu">
-          <div>
-            <img src="/Frontend/images/logo 1.png" />
-            <h3>관리자페이지</h3>
+        <div id="manage_menu">
+          <div class="manage_menu_section">
+            <div class="manage_menu_title">
+              <a href="../../manageMain.html">Alcohol</a>
+            </div>
+
+            <h3>관리자 페이지</h3>
             <ul id="nav_bar2">
               <li class="menu_bar2">
-                <a href="">고객 관리</a>
-                <ul class="submenu">
-                  <li><a href="../user/useradd.html">고객 추가</a></li>
-                  <li><a href="../user/userdelete.html">고객 삭제</a></li>
-                  <li><a href="../user/useredit.html">고객 수정</a></li>
-                  <li><a href="../user/userload.html">고객 조회</a></li>
-                </ul>
+                <a href="../user/userload.html">고객관리 ▸</a>
               </li>
               <li class="menu_bar2">
-                <a href="">상품 관리</a>
-                <ul class="submenu">
-                  <li><a href="../product/proadd.html">상품 추가</a></li>
-                  <li>
-                    <a href="../product/prodelete.html">상품 삭제</a>
-                  </li>
-                  <li><a href="../product/proedit.html">상품 수정</a></li>
-                  <li><a href="../product/proload.html">상품 조회</a></li>
-                </ul>
+                <a href="./proload.html">상품관리 ▸</a>
               </li>
               <li class="menu_bar2">
-                <a href="">주문 관리</a>
-                <ul class="submenu">
-                  <li><a href="../order/orderload.html">주문 조회</a></li>
-                  <li>
-                    <a href="../order/orderdelete.html">주문 삭제</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu_bar2">
-                <a href="">1:1 문의</a>
-                <ul class="submenu">
-                  <li><a href="../inquery/receipt.html">접수 내역</a></li>
-                  <li>
-                    <a href="../inquery/complete.html">완료 내역</a>
-                  </li>
-                </ul>
+                <a href="../order/orderload.html">주문관리 ▸</a>
               </li>
             </ul>
           </div>
@@ -73,7 +47,110 @@
           </div>
         </div>
 
-        <div class="manage_section">dd</div>
+        <div id="manage_section">
+          <div class="manage_pro">
+            <div class="manage_protitle">📦상품 정보 수정</div>
+            <form class="proedit_form" method="post">
+              <div class="proedit_section1">
+                <label name="proname">📛상품명</label>
+                <input
+                  type="text"
+                  id="proname"
+                  name="proname"
+                  placeholder=" 예시 : 맛있는 초콜릿"
+                />
+                <label name="category">🍹카테고리</label>
+                <select id="category" name="category" class="select_category">
+                  <option value="위스키">위스키</option>
+                  <option value="와인">와인</option>
+                  <option value="사케">사케</option>
+                  <option value="보드카">보드카</option>
+                  <option value="소주">소주</option>
+                  <option value="맥주">맥주</option>
+                  <option value="막걸리">막걸리</option>
+                  <option value="안주">안주</option>
+                </select>
+                <label name="category_snack">🥩세부 카테고리</label>
+                <select
+                  id="category_snack"
+                  name="category_snack"
+                  class="select_category"
+                >
+                  <option>고기류</option>
+                  <option>해산물류</option>
+                  <option>탕류</option>
+                </select>
+                <label name="proprice">💰상품가격</label>
+                <input
+                  type="text"
+                  id="proprice"
+                  name="proprice"
+                  placeholder=" 예시 : 10000원"
+                  required
+                />
+                <label name="proquantity">🧺재고량</label>
+                <input
+                  id="proquantity"
+                  id="proquantity"
+                  name="proquantity"
+                  type="text"
+                  placeholder=" 예시 : 1000개"
+                  required
+                />
+              </div>
+              <div class="proedit_section2">
+                <label name="proml">🥤용량</label>
+                <input
+                  type="text"
+                  id="proml"
+                  name="pml"
+                  placeholder=" 예시 : 1500ml"
+                  required
+                />
+                <label name="proalcohol">🥛도수</label>
+                <input
+                  :adult
+                  type="text"
+                  id="proalcohol"
+                  name="proalcohol"
+                  placeholder=" 예시 : 7도"
+                />
+                <label name="procountry">🇰🇷 국가</label>
+                <input
+                  type="text"
+                  id="procountry"
+                  name="procountry"
+                  placeholder=" 예시 : 남아프리카 공화국"
+                />
+                <label name="protext">📄상품설명</label>
+                <input
+                  type="text"
+                  id="protext"
+                  name="protext"
+                  maxlength="200"
+                  placeholder=" 예시 : 부드럽고 달콤하다가 끝에 쌉사름한 초콜릿"
+                />
+                <label for="proimage" name="proimage"
+                  >📷상품사진 (png 파일만 가능)</label
+                >
+                <input
+                  class="proadd_form_file"
+                  type="file"
+                  id="proimage"
+                  name="proimage"
+                  accept="image/png"
+                  required
+                />
+              </div>
+            </form>
+            <div class="proinfo_btns">
+              <button type="submit" class="pro_btn">수정하기</button>
+              <button class="pro_btn">
+                <a href="../product/proload.html">뒤로가기</a>
+              </button>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </body>
