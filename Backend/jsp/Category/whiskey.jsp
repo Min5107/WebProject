@@ -1,6 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*"%>
 <%@ include file="../conn.jsp"%>
+<%
+
+%>
+	
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/Styles/CSS/category.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/Styles/CSS/style.css" />
     <script src="${pageContext.request.contextPath}/Styles/Javascript/includeHTML.js"></script>
+    <script src="${pageContext.request.contextPath}/Styles/Javascript/category.js"></script>
   </head>
   <body>
   <body>
@@ -25,6 +31,7 @@
               PreparedStatement preparedStatement = conn.prepareStatement(whiskeySelectQuery);
               ResultSet whiskeyResultSet = preparedStatement.executeQuery();
               while (whiskeyResultSet.next()) {
+            	int productDiv = whiskeyResultSet.getInt("pdiv");
                 int productNumber = whiskeyResultSet.getInt("pno");
                 String productName = whiskeyResultSet.getString("pname");
                 int productPrice = whiskeyResultSet.getInt("pprice");
@@ -32,9 +39,10 @@
                 String productPriceWon = String.format("%,d 원", productPrice);
           %>
           <div class="items">
-            <form id="alcohol-detail" action="${pageContext.request.contextPath}/Backend/jsp/product-detail/product-detail.jsp" method="post">
-              <button type="submit" id="items-submit">
-                <input type="hidden" value="<%=productNumber%>" id="alcoholid" name="alcoholid">
+            <form class="alcohol-detail" action="${pageContext.request.contextPath}/Backend/jsp/product-detail/product-detail.jsp" method="post">
+              <button type="submit" class="items-submit">
+                <input type="hidden" value="<%=productDiv%>" class="alcoholid" name="productDiv">
+                <input type="hidden" value="<%=productNumber%>" class="alcoholid" name="alcoholid">
                 <img class="items_img" id="items-img" src="${pageContext.request.contextPath}<%=productUrl%>" />
                 <span class="item_span"><%=productName%></span>
                 <p class="item_p"><%=productPriceWon%></p>

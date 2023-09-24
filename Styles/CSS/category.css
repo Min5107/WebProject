@@ -77,7 +77,7 @@ a:hover {
 }
 
 /*상품 카테고리 Form Submit 버튼*/
-#items-submit{
+#items-submit {
   background: white;
   border: 1px solid transparent;
 }
@@ -105,7 +105,12 @@ a:hover {
 
 .item_span {
   height: 20%;
+  font-size:30px;
   color: black;
+}
+
+.item_span1 {
+	display:none;
 }
 
 /*상품명*/
@@ -141,14 +146,14 @@ a:hover {
 
 .recommend_items {
   display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
 }
 
 /*추천 카테고리 별 상품을 묶어놓은 div*/
 
 .recommend_item {
-  width: 30%;
+  /* width: 30%; */
 }
 
 /*추천 카테고리별 상품 div*/

@@ -69,7 +69,7 @@ header {
 /*검색, 로그인, 회원가입를 감싸는 부분*/
 
 #header_search {
-  height: 50px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -438,4 +438,46 @@ footer {
   background-color: black;
   border-radius: 4px;
   color: white;
+}
+
+.board_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.board_form {
+  border: 1px solid black;
+}
+
+.board_table {
+  width: 1350px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.board_th {
+  width: 50px;
+}
+
+.board_td {
+  padding: 10px;
+  text-align: left;
+}
+
+.board_td_btn {
+  width: 100px;
+  text-align: center;
+}
+
+.board_table th {
+  border: 1px solid black;
+}
+
+.board_table td {
+  border: 1px solid black;
 }

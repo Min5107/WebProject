@@ -101,6 +101,7 @@ CREATE TABLE `order` (
   `opay` int DEFAULT NULL,
   `ctotalprice` int DEFAULT NULL,
   `otime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `cdiv` int DEFAULT NULL,
   PRIMARY KEY (`ono`),
   KEY `pno` (`pno`),
   KEY `mid` (`mid`),
@@ -133,7 +134,7 @@ CREATE TABLE `product` (
   `pdiv` int DEFAULT NULL,
   PRIMARY KEY (`pno`),
   KEY `mid` (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,4 +167,4 @@ CREATE TABLE `reply` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-14 10:20:10
+-- Dump completed on 2023-08-21  9:18:45
